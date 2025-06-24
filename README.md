@@ -1,8 +1,8 @@
-# Bảo Tàng 3D Tương Tác trên Nền Tảng Web - Museum Imaginarium
+# Bảo Tàng 3D Tương Tác trên Nền Tảng Web - 3D Museum
 
 ## 📋 Giới Thiệu Dự Án
 
-**Museum Imaginarium** là một dự án xây dựng bảo tàng nghệ thuật ảo 3D tương tác, cho phép người dùng khám phá các không gian triển lãm và tương tác với các hiện vật nghệ thuật một cách sống động ngay trên trình duyệt web. Dự án này nhằm mục đích mang lại trải nghiệm tham quan bảo tàng trực quan, hấp dẫn và giàu thông tin, vượt qua những giới hạn về địa lý và thời gian.
+**3D Museum** là một dự án xây dựng bảo tàng nghệ thuật ảo 3D tương tác, cho phép người dùng khám phá các không gian triển lãm và tương tác với các hiện vật nghệ thuật một cách sống động ngay trên trình duyệt web. Dự án này nhằm mục đích mang lại trải nghiệm tham quan bảo tàng trực quan, hấp dẫn và giàu thông tin, vượt qua những giới hạn về địa lý và thời gian.
 
 ### 🎯 Mục Tiêu Chính
 
