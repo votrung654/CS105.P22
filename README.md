@@ -86,22 +86,6 @@
 *   **Nguồn assets:**
     *   Tự tạo.
     *   Các kho tài nguyên 3D miễn phí hoặc trả phí (ví dụ: Sketchfab, TurboSquid, CGTrader) với giấy phép phù hợp.
-*   **Cấu trúc thư mục assets (đề xuất):**
-    ```
-    /public
-        /models
-            /room/gallery_room.glb
-            /artifacts
-                /statue_david.glb
-                /painting_mona_lisa_frame.glb
-        /textures
-            /room/wall_texture.jpg
-            /room/floor_texture.jpg
-            /artifacts/david_marble.jpg
-        /audio
-            /descriptions/david_description.mp3
-            /ambient/museum_ambience.mp3
-    ```
 
 ## 📐 Thuật Toán và Khái Niệm Đồ Họa Cốt Lõi
 
@@ -167,32 +151,6 @@
 7.  **Cải thiện Tương tác Vật lý:**
     *   Sử dụng thư viện vật lý (ví dụ: Rapier, Cannon.js, Ammo.js được tích hợp với Three.js) để cho phép tương tác vật lý thực tế hơn với một số hiện vật.
 
-## 📁 Cấu Trúc Thư Mục Dự Án (Đề xuất)
-Use code with caution.
-Markdown
-/museum-3d-web/
-|-- /public/ # Chứa các assets tĩnh được phục vụ trực tiếp
-| |-- /models/ # Chứa các file mô hình 3D (GLB, GLTF)
-| | |-- room_gallery.glb
-| | -- artifact_statue.glb | |-- /textures/ # Chứa các file texture (JPG, PNG) | | |-- wall_marble.jpg | |-- floor_wood.jpg
-| |-- /audio/ # Chứa các file âm thanh
-| | |-- ambient_sound.mp3
-| | -- artifact_description.mp3 |-- favicon.ico
-|-- /src/ # Mã nguồn chính của ứng dụng
-| |-- /components/ # Các thành phần tái sử dụng (React components nếu dùng React)
-| | |-- /Scene/
-| | | |-- SceneManager.js # Quản lý scene, camera, renderer
-| | | |-- Lights.js # Thiết lập ánh sáng
-| | | -- Room.js # Tạo hình học phòng | | |-- /Player/ | | |-- PlayerControls.js # Logic điều khiển người chơi
-| | |-- /Artifacts/
-| | | -- Artifact.js # Component hiển thị và tương tác hiện vật | |-- /UI/
-| | |-- MiniMap.js # Logic mini-map
-| | |-- InfoPanel.js # Bảng thông tin hiện vật
-| | -- LoadingScreen.js # Màn hình tải | |-- /utils/ # Các hàm tiện ích | | |-- assetLoaders.js # Hàm tải GLTF, Texture, Audio | |-- mathHelpers.js # Hàm tính toán, ví dụ: radians to degrees
-| |-- /data/ # Dữ liệu tĩnh (ví dụ: metadata hiện vật)
-| | -- artifactsData.js | |-- /styles/ # Files CSS/SCSS | |-- main.css
-| |-- main.js # Điểm vào chính của ứng dụng JavaScript
-| -- App.js # Component gốc (nếu dùng React) |-- index.html # File HTML chính |-- vite.config.js # Cấu hình Vite (nếu dùng Vite) |-- package.json-- README.md
 ## 🚀 Cài Đặt và Chạy Dự Án
 
 ### Yêu Cầu Cần Thiết
@@ -203,7 +161,7 @@ Markdown
 1.  **Clone repository (Sau khi bạn tạo nó):**
     ```bash
     git clone <your-repository-url>
-    cd museum-3d-web
+    cd CS105.P22
     ```
 2.  **Cài đặt dependencies:**
     ```bash
