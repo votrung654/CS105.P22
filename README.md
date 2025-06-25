@@ -181,5 +181,5 @@
     # hoặc
     yarn dev
     ```
-    Mở trình duyệt và truy cập vào địa chỉ http://localhost:3000/. 
+    Mở trình duyệt và truy cập vào địa chỉ http://localhost:5173/. 
 
