@@ -4,20 +4,114 @@
 
 **3D Museum** là một dự án xây dựng bảo tàng nghệ thuật ảo 3D tương tác, cho phép người dùng khám phá các không gian triển lãm và tương tác với các hiện vật nghệ thuật một cách sống động ngay trên trình duyệt web. Dự án này nhằm mục đích mang lại trải nghiệm tham quan bảo tàng trực quan, hấp dẫn và giàu thông tin, vượt qua những giới hạn về địa lý và thời gian.
 
-### 🎯 Mục Tiêu Chính
+## 🚀 HƯỚNG DẪN CÀI ĐẶT VÀ CHẠY DỰ ÁN
 
-1.  **Xây dựng không gian bảo tàng ảo 3D tương tác:** Hiện thực hóa một hoặc nhiều không gian phòng trưng bày 3D chi tiết, dễ dàng điều hướng.
-2.  **Hiển thị hiện vật động:** Cho phép tải và trưng bày các mô hình 3D của hiện vật (hoặc hình ảnh 2D trên khung tranh) với khả năng tương tác.
-3.  **Trải nghiệm người dùng nhập vai:** Cung cấp điều khiển camera góc nhìn thứ nhất (FPS-style) và/hoặc Orbit controls để khám phá không gian và xem chi tiết hiện vật.
-4.  **Tối ưu hóa hiệu suất:** Đảm bảo trải nghiệm mượt mà trên các trình duyệt web hiện đại bằng cách áp dụng các kỹ thuật tối ưu hóa đồ họa.
-5.  **Giao diện người dùng trực quan:** Thiết kế UI/UX thân thiện, dễ sử dụng, bao gồm các tính năng hỗ trợ như mini-map, thông tin hiện vật (text/audio).
+### ⚠️ Yêu Cầu Hệ Thống
+- **Node.js** phiên bản 16.0+ (khuyến nghị 18.0+)
+- **npm** phiên bản 8.0+ hoặc **yarn** phiên bản 1.22+
+- **Git** để clone repository
+- Trình duyệt web hiện đại hỗ trợ WebGL 2.0:
+  - Chrome 56+
+  - Firefox 51+
+  - Safari 15+
+  - Edge 79+
 
-### 🧍 Đối Tượng Hướng Đến
+### 📥 Bước 1: Clone Repository (Bỏ qua bước này nếu đã tải source code của project)
+```bash
+git clone https://github.com/votrung654/CS105.P22.git
+cd CS105.P22
+```
 
-*   Học sinh, sinh viên muốn tìm hiểu về nghệ thuật và lịch sử.
-*   Khách tham quan bảo tàng từ xa, không có điều kiện đến trực tiếp.
-*   Nhà nghiên cứu, giáo viên cần công cụ trực quan để giảng dạy.
-*   Người yêu thích nghệ thuật, lịch sử và công nghệ 3D.
+### 📦 Bước 2: Cài Đặt Dependencies
+```bash
+# Sử dụng npm
+npm install
+
+# Hoặc sử dụng yarn
+yarn install
+```
+
+**Dependencies chính được cài đặt:**
+- `three@^0.160.0` - Thư viện 3D engine
+- `vite@^5.0.0` - Build tool và dev server
+- `@types/three` - TypeScript definitions cho Three.js
+
+### 🎨 Bước 3: Tải Assets (QUAN TRỌNG)
+
+#### 3.1 Tải Hình Ảnh Bảo Tàng
+Tải folder **3DArtMuseum** từ Google Drive và đặt vào thư mục gốc của project:
+
+**Link tải:** [3DArtMuseum Assets](https://drive.google.com/drive/folders/1iztZPD85eT5wLD-Q34Ui4oDCwLzt0KTH?usp=drive_link)
+
+**Cấu trúc thư mục sau khi tải:**
+```
+CS105.P22/
+├── 3DArtMuseum/
+│   ├── Art_01.jpg
+│   ├── Art_02.jpg
+│   ├── Art_03.jpg  
+│   ├── .... 
+│   └── Art_09.jpg
+├── public/
+├── src/
+├── index.html
+├── package-lock.json
+├── package.json
+├── painting-gallery.html
+└── sculpture-gallery.html
+```
+
+#### 3.2 Tải Mô Hình 3D (.glb files)
+Tải các file mô hình 3D và đặt vào thư mục `public/models/artifacts/`:
+
+**Link tải:** [GLB Models](https://drive.google.com/drive/folders/1xgacdMwwdj3d26k_OkrDG3VzUGXaHpkX?usp=drive_link)
+
+**Cấu trúc thư mục models:**
+```
+public/
+└── models/
+    └── artifacts/
+        ├── seated_ganesha_carnegie_museum_of_art.glb
+        ├── tomb_of_tu_duc.glb
+        ├── ...
+        └── stone_buddha_statue.glb
+```
+
+**Lưu ý:** 
+- Đảm bảo file tải về lưu đúng tên gốc và vị trí như cấu trúc thư mục của folder project như trên.
+- Có tổng 9 ảnh .jpg và 8 file .glb.
+- Truy cập https://github.com/votrung654/CS105.P22 để tải các file tương ứng nếu link drive lỗi
+
+### ▶️ Bước 4: Chạy Dự Án
+
+```bash
+# Chạy dev server
+npm run dev
+
+# Hoặc với yarn
+yarn dev
+```
+
+**Kết quả:** 
+- Server sẽ chạy trên `http://localhost:5173`
+- Hỗ trợ Hot Module Replacement (HMR)
+- DevTools tự động mở để debug
+
+
+### 🎮 Bước 5: Hướng Dẫn Sử Dụng
+
+#### Điều Khiển Cơ Bản:
+- **W, A, S, D** - Di chuyển
+- **Chuột** - Xoay camera
+- **Click chuột trái** - Tương tác với hiện vật
+- **ESC** - Thoát khỏi mode Pointer Lock
+- **F** - Fullscreen (nếu hỗ trợ)
+
+#### Tính Năng:
+- **Mini-map** ở góc phải màn hình
+- **Info Panel** xuất hiện khi click vào hiện vật
+- **Audio Description** tự động phát khi xem chi tiết hiện vật
+
 
 ## 🌟 Tính Năng Cốt Lõi
 
@@ -151,35 +245,12 @@
 7.  **Cải thiện Tương tác Vật lý:**
     *   Sử dụng thư viện vật lý (ví dụ: Rapier, Cannon.js, Ammo.js được tích hợp với Three.js) để cho phép tương tác vật lý thực tế hơn với một số hiện vật.
 
-## 🚀 Cài Đặt và Chạy Dự Án
+---
 
-### Yêu Cầu Cần Thiết
-*   Node.js và npm (hoặc yarn) đã được cài đặt.
-*   Một trình duyệt web hiện đại hỗ trợ WebGL (Chrome, Firefox, Edge, Safari).
+**Nhóm 10 - CS105.P22**
+- Võ Đình Trung - 22521571
+- Huỳnh Minh Quang - 21522519  
+- Trương Nguyên Hạo - 21522051
+- Trần Trọng Nhân - 21522924
 
-### Các Bước Cài Đặt
-1.  **Clone repository (Sau khi bạn tạo nó):**
-    ```bash
-    git clone <your-repository-url>
-    cd CS105.P22
-    ```
-2.  **Cài đặt dependencies:**
-    ```bash
-    npm install
-    # hoặc
-    yarn install
-    ```
-    Các dependencies chính cần có trong `package.json`:
-    *   `three`: Thư viện Three.js.
-    *   `vite`: (Nếu dùng Vite) Công cụ build.
-    *   (Các thư viện React nếu bạn quyết định dùng React: `react`, `react-dom`, `@react-three/fiber`, `@react-three/drei`)
-
-### Chạy Dự Án (Development Mode)
-*   **Nếu dùng Vite:**
-    ```bash
-    npm run dev
-    # hoặc
-    yarn dev
-    ```
-    Mở trình duyệt và truy cập vào địa chỉ http://localhost:5173/. 
-
+**Giảng viên hướng dẫn:** ThS. Cáp Phạm Đình Thăng
